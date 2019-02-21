@@ -43,5 +43,11 @@ namespace Fisher.Bookstore.Api.Controllers
                 this.db.SaveChanges();
 
         }
+
+        [HttpGet]
+        public IActionResult GetAction()
+        {
+            return Ok(db.Books);
+        }
     }
 }
