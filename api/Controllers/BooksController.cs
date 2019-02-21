@@ -89,7 +89,7 @@ namespace Fisher.Bookstore.Api.Controllers
             var bookToEdit = db.Books.FirstOrDefault(b => b.Id == id);
             if (bookToEdit == null)
             {
-                return NotFouund();
+                return NotFound();
             }
 
             bookToEdit.Title = book.Title;
