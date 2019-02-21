@@ -94,7 +94,6 @@ namespace Fisher.Bookstore.Api.Controllers
 
             bookToEdit.Title = book.Title;
             bookToEdit.ISBN = book.ISBN;
-            bookToEdit.Author = book.Author;
 
             db.Books.Update(bookToEdit);
             db.SaveChanges();
