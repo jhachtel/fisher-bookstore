@@ -11,5 +11,22 @@ namespace Fisher.Bookstore.Api.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
+        private readonly BookstoreContext db;
+
+        public BooksController(BookstoreContext db)
+        {
+            this.db = db;
+
+            if (this.db.Books.Count() == 0)
+                {
+                this.db.Books.Add(new Book()
+                {
+                    Id = 1,
+                    Title = "Design Patterns",
+                    Author = "Eric Gamma",
+                    ISBN = "978-0201633610"
+                });
+            }
+        }
     }
 }
