@@ -50,8 +50,18 @@ namespace Fisher.Bookstore.Api.Controllers
         {
             return Ok(db.Books);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetBook(int id)
+        {
+            var book = db.Books.FirstOrDefault(b => b.id == id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(book);
+        }
     }
 }
-
-// Had already committed changes to master, so having issues getting
-// branch to work for Lab requirements.
