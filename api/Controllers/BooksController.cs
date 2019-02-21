@@ -16,6 +16,7 @@ namespace Fisher.Bookstore.Api.Controllers
         public BooksController(BookstoreContext db)
         {
             this.db = db;
+
             if (this.db.Books.Count() == 0)
                 {
                     this.db.Books.Add(new Book()
@@ -45,7 +46,7 @@ namespace Fisher.Bookstore.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAction()
+        public IActionResult Get()
         {
             return Ok(db.Books);
         }
